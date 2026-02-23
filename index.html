@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Bali Adventure 🌺</title>
+<title>Our Bali Baecation 🌺</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -562,39 +562,72 @@ body {
 /* ====== HERO PHOTO ====== */
 .hero-photo-wrapper {
   display: flex;
-  justify-content: center;
-  padding: 3rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem 2rem;
   background: var(--sand-light);
+  position: relative;
+}
+
+.hero-photo-frame {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.hero-photo-frame::before {
+  content: '💕';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .hero-photo {
   width: 100%;
-  max-width: 550px;
-  aspect-ratio: 16 / 10;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--blush), var(--sand));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  gap: 0.75rem;
-  position: relative;
   overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.8);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  position: relative;
+  border: 4px solid white;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.1),
+    0 2px 8px rgba(0,0,0,0.06);
+  background: var(--blush);
 }
-
-.hero-photo .ph-icon { font-size: 3rem; }
-.hero-photo .ph-text { font-weight: 600; font-size: 0.85rem; }
 
 .hero-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 17px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
 }
+
+.hero-photo-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: var(--ocean-deep);
+}
+
+.hero-photo-deco-left,
+.hero-photo-deco-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.hero-photo-deco-left { left: -2rem; }
+.hero-photo-deco-right { right: -2rem; }
+
+.hero-photo .ph-icon { font-size: 3rem; }
+.hero-photo .ph-text { font-weight: 600; font-size: 0.85rem; }
 
 /* ====== LOVE NOTE ====== */
 .love-note {
@@ -710,8 +743,13 @@ body {
   .footer { padding: 2rem 1.5rem; }
   .footer .footer-brand { font-size: 1.25rem; }
   .footer p { font-size: 0.8rem; }
-  .hero-photo-wrapper { padding: 2rem 1.25rem; }
-  .hero-photo { max-width: 100%; border-radius: 16px; }
+  .hero-photo-wrapper { padding: 2rem 1.25rem 1.5rem; }
+  .hero-photo-frame { max-width: 100%; }
+  .hero-photo { border-radius: 16px; border-width: 3px; }
+  .hero-photo img { border-radius: 13px; }
+  .hero-photo-caption { font-size: 1.05rem; }
+  .hero-photo-deco-left, .hero-photo-deco-right { display: none; }
+  .hero-photo-frame::before { font-size: 1.2rem; top: -14px; }
 }
 
 /* Extra small phones */
@@ -838,7 +876,7 @@ body {
   <div class="hero-particles" id="particles"></div>
   <div class="hero-content">
     <div class="hero-badge">✈️ &nbsp; March 11–22 · 12 Nights</div>
-    <h1>Our <em>Bali</em> Adventure</h1>
+    <h1>Our <em>Bali</em> Baecation</h1>
     <p class="hero-subtitle">Sunrises, sacred temples, ocean dives & everything in between — just us.</p>
     <a href="#canggu" class="hero-cta">
       Explore Our Journey <span>→</span>
@@ -850,8 +888,8 @@ body {
 <!-- ====== LOVE NOTE ====== -->
 <section class="love-note">
   <div class="love-note-content reveal">
-    <h2>A Note For You <span class="heart-float">💕</span></h2>
-    <p>I planned this because you deserve to experience something extraordinary. Not just a vacation — but a real adventure that brings us closer. Every sunrise, every dive, every quiet moment is something I want to share with you. This is just the beginning.</p>
+    <h2>A Note For My Queen <span class="heart-float">💕</span></h2>
+    <p>I created this because you deserve to experience something extraordinary. Not just a vacation — but a real adventure that brings us closer. Every sunrise, every dive, every quiet moment is something I want to experience with you. This is just the beginning.</p>
     <br>
     <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--gold-light);">— With all my love</p>
   </div>
@@ -859,8 +897,13 @@ body {
 
 <!-- ====== OUR PHOTO ====== -->
 <div class="hero-photo-wrapper reveal">
-  <div class="hero-photo" id="heroPhoto">
-    <img src="photo.png" alt="Us">
+  <div class="hero-photo-frame">
+    <span class="hero-photo-deco-left">🌺</span>
+    <span class="hero-photo-deco-right">🌺</span>
+    <div class="hero-photo" id="heroPhoto">
+      <img src="photo.png" alt="Us">
+    </div>
+    <div class="hero-photo-caption">us & our entire zoo 🐾</div>
   </div>
 </div>
 
@@ -1281,7 +1324,7 @@ body {
 
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
-  <div class="footer-brand">Our Bali Adventure 🌺</div>
+  <div class="footer-brand">Our Bali Baecation 🌺</div>
   <p>Planned with love, intention, and way too many browser tabs.</p>
 </footer>
 
