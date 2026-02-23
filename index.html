@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Bali Adventure 🌺</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #F5E6D3;
+  --sand-light: #FFF8F0;
+  --ocean: #2B6E7E;
+  --ocean-deep: #1A4A56;
+  --ocean-light: #6BB5C4;
+  --coral: #E8766A;
+  --coral-soft: #F4A59A;
+  --jungle: #4A7C59;
+  --jungle-light: #7BB98A;
+  --gold: #D4A853;
+  --gold-light: #F0D68A;
+  --plum: #6B4C6E;
+  --blush: #F2D5CE;
+  --white: #FFFFFF;
+  --text: #2D2A26;
+  --text-light: #6B6560;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--sand-light);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #1A4A56 0%, #2B6E7E 30%, #6BB5C4 60%, #F0D68A 85%, #E8766A 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(74,124,89,0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232,118,106,0.2) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(100vh) rotate(0deg); }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-10vh) rotate(360deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeSlideDown 1s ease-out 0.3s both;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  animation: fadeSlideDown 1s ease-out 0.5s both;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.hero h1 em {
+  font-family: 'Dancing Script', cursive;
+  font-style: normal;
+  font-size: 1.1em;
+  color: var(--gold-light);
+}
+
+.hero-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  animation: fadeSlideDown 1s ease-out 0.7s both;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  animation: fadeSlideDown 1s ease-out 0.9s both;
+}
+
+.hero-cta:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 2;
+  animation: bounce 2s ease-in-out infinite 2s;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== NAV ====== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,248,240,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-inner {
+  display: flex;
+  gap: 0;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-width: max-content;
+  justify-content: center;
+}
+
+.nav-item {
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--ocean);
+  border-bottom-color: var(--ocean);
+}
+
+.nav-item span { margin-right: 0.35rem; }
+
+/* ====== SECTIONS ====== */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--ocean-deep);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ====== CARDS ====== */
+.cards-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .cards-grid .card-wide { grid-column: 1 / -1; }
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.card-color-bar {
+  height: 4px;
+  width: 100%;
+}
+
+.bar-ocean { background: linear-gradient(90deg, var(--ocean), var(--ocean-light)); }
+.bar-jungle { background: linear-gradient(90deg, var(--jungle), var(--jungle-light)); }
+.bar-coral { background: linear-gradient(90deg, var(--coral), var(--coral-soft)); }
+.bar-gold { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.bar-plum { background: linear-gradient(90deg, var(--plum), #A67BA9); }
+
+.card-photo-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--sand) 0%, var(--blush) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-photo-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.3) 10px,
+    rgba(255,255,255,0.3) 20px
+  );
+  opacity: 0.3;
+}
+
+.card-photo-placeholder .ph-icon { font-size: 2.5rem; z-index: 1; }
+.card-photo-placeholder .ph-text { z-index: 1; font-weight: 600; }
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.card-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  color: var(--ocean-deep);
+  margin-bottom: 0.5rem;
+}
+
+.card-location {
+  font-size: 0.85rem;
+  color: var(--coral);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.card-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--sand);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ocean-deep);
+  margin-bottom: 1.25rem;
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--ocean);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  background: rgba(43,110,126,0.08);
+  transition: all 0.3s;
+}
+
+.card-link:hover {
+  background: rgba(43,110,126,0.15);
+  transform: translateX(2px);
+}
+
+/* ====== CHECKLIST ====== */
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.checklist li:hover {
+  background: var(--sand);
+}
+
+.check-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #D0C8C0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  font-size: 0.75rem;
+}
+
+.checklist li.checked .check-box {
+  background: var(--jungle);
+  border-color: var(--jungle);
+  color: white;
+}
+
+.checklist li.checked .check-text {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+/* ====== PROGRESS BAR ====== */
+.progress-wrapper {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.progress-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--ocean-deep);
+  margin-bottom: 1rem;
+}
+
+.progress-bar-bg {
+  height: 12px;
+  background: var(--sand);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--ocean-light), var(--jungle-light), var(--gold), var(--coral-soft));
+  background-size: 300% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 0%;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+/* ====== PHOTO GALLERY PLACEHOLDER ====== */
+.photo-strip {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+  margin: 3rem 0;
+}
+
+.photo-strip-item {
+  min-width: 200px;
+  height: 260px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--blush), var(--sand));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed rgba(0,0,0,0.1);
+}
+
+.photo-strip-item .ph-icon { font-size: 2rem; }
+
+/* ====== SAFETY SECTION ====== */
+.safety-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .safety-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.safety-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.safety-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ====== LOVE NOTE ====== */
+.love-note {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--ocean-deep), var(--ocean), var(--jungle));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.love-note::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+
+.love-note-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.love-note h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: var(--gold-light);
+}
+
+.love-note p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.love-note .heart-float {
+  font-size: 1.5rem;
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--sand);
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.footer .footer-brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: var(--ocean);
+  margin-bottom: 0.5rem;
+}
+
+/* ====== SECTION DIVIDERS ====== */
+.divider {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+  color: var(--coral-soft);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+  .section { padding: 2.5rem 1rem; }
+  .card-body { padding: 1.25rem; }
+  .nav-item { padding: 0.85rem 0.65rem; font-size: 0.7rem; letter-spacing: 0.5px; }
+  .section-title { font-size: 1.75rem; }
+  .section-subtitle { font-size: 0.92rem; line-height: 1.6; }
+  .section-icon { font-size: 2.25rem; }
+  .hero { min-height: 100svh; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero h1 em { font-size: 1.05em; }
+  .hero-subtitle { font-size: 0.92rem; padding: 0 1.25rem; line-height: 1.6; }
+  .hero-badge { font-size: 0.65rem; padding: 0.4rem 1rem; letter-spacing: 1.5px; }
+  .hero-cta { padding: 0.85rem 1.75rem; font-size: 0.9rem; }
+  .card-photo-placeholder { height: 150px; }
+  .card-title { font-size: 1.1rem; }
+  .card-desc { font-size: 0.88rem; line-height: 1.65; }
+  .card-highlight { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+  .card-links { gap: 0.4rem; }
+  .card-link { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
+  .card-location { font-size: 0.8rem; }
+  .card-emoji { font-size: 1.25rem; }
+  .checklist li { font-size: 0.85rem; padding: 0.4rem 0.5rem; gap: 0.6rem; }
+  .check-box { width: 20px; height: 20px; }
+  .progress-wrapper { padding: 1.25rem 1rem; margin-bottom: 2rem; }
+  .progress-label { font-size: 1.05rem; }
+  .progress-text { font-size: 0.8rem; }
+  .love-note { padding: 3rem 1.25rem; }
+  .love-note h2 { font-size: 1.7rem; }
+  .love-note p { font-size: 0.95rem; line-height: 1.7; }
+  .section-header { margin-bottom: 2rem; }
+  .section-label { font-size: 0.65rem; letter-spacing: 2px; }
+  .cards-grid { gap: 1.25rem; }
+  .divider { padding: 1.25rem 0; letter-spacing: 0.5rem; font-size: 1.2rem; }
+  .scroll-indicator { bottom: 1.5rem; font-size: 1.2rem; }
+  .footer { padding: 2rem 1.5rem; }
+  .footer .footer-brand { font-size: 1.25rem; }
+  .footer p { font-size: 0.8rem; }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 2rem; }
+  .hero-badge { font-size: 0.6rem; padding: 0.35rem 0.75rem; }
+  .nav-item { padding: 0.75rem 0.5rem; font-size: 0.65rem; }
+  .section-title { font-size: 1.5rem; }
+  .card-title { font-size: 1rem; }
+  .card-body { padding: 1rem; }
+}
+
+/* ====== TRIP TIMELINE ====== */
+.timeline-overview {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.timeline-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--ocean-deep);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  padding: 0.5rem 0 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  min-width: 100px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.timeline-stop:hover { transform: translateY(-3px); }
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--stop-color);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--stop-color), 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s;
+}
+
+.timeline-stop:hover .timeline-dot { transform: scale(1.3); }
+
+.timeline-stop-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-stop-dates {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.timeline-stop-nights {
+  font-size: 0.7rem;
+  color: var(--coral);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.timeline-connector {
+  height: 2px;
+  flex: 1;
+  min-width: 30px;
+  max-width: 80px;
+  background: linear-gradient(90deg, var(--ocean-light), var(--jungle-light));
+  margin-top: 9px;
+  border-radius: 2px;
+}
+
+.timeline-connector-dashed {
+  background: none;
+  border-top: 2px dashed var(--gold);
+}
+
+.timeline-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* ====== ANIMATIONS ON SCROLL ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✈️ &nbsp; March 11–22 · 12 Nights</div>
+    <h1>Our <em>Bali</em> Adventure</h1>
+    <p class="hero-subtitle">Sunrises, sacred temples, ocean dives & everything in between — just us.</p>
+    <a href="#canggu" class="hero-cta">
+      Explore Our Journey <span>→</span>
+    </a>
+  </div>
+  <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- ====== NAV ====== -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-item" href="#canggu"><span>🌅</span> Canggu</a>
+    <a class="nav-item" href="#ubud"><span>🌿</span> Ubud</a>
+    <a class="nav-item" href="#islands"><span>🌊</span> Islands</a>
+    <a class="nav-item" href="#uluwatu"><span>🛕</span> Uluwatu</a>
+    <a class="nav-item" href="#culture"><span>🎭</span> Culture</a>
+  </div>
+</nav>
+
+<!-- ====== PROGRESS ====== -->
+<div style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem 0;">
+  <div class="progress-wrapper">
+    <div class="progress-label">Our Trip Planning Progress ✨</div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">0 of 0 items checked</div>
+  </div>
+</div>
+
+<!-- ====== SECTION 1: CANGGU ====== -->
+<section class="section" id="canggu">
+  <div class="section-header reveal">
+    <span class="section-icon">🌅</span>
+    <div class="section-label">Mar 11–14 · Wed–Sat · 3 Nights</div>
+    <h2 class="section-title">Canggu — Arrival & Reset</h2>
+    <p class="section-subtitle">We land, we breathe, we let the island welcome us. Recovery mode first — ocean air, good food, gym sessions, yoga, beach clubs, and settling into island time together.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Breathwork -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-ocean"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🧘</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🧘</span>
+        <h3 class="card-title">Breathwork & Nervous System Reset</h3>
+        <div class="card-location">📍 The Practice Yoga, Canggu</div>
+        <p class="card-desc">A traditional shala with real energy — no influencer crowds. We start our trip by syncing our breath and calming our nervous systems from travel.</p>
+        <div class="card-highlight">⚡ Traditional shala, less influencer energy</div>
+        <div class="card-links">
+          <a class="card-link" href="https://thepracticebali.com" target="_blank">🔗 The Practice Bali</a>
+        </div>
+        <ul class="checklist" data-section="canggu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Morning breathwork session</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Guided pranayama class</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">10-min silent meditation after</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cold Plunge -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-ocean"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🧊</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🧊</span>
+        <h3 class="card-title">Cold Plunge + Sauna</h3>
+        <div class="card-location">📍 Taksu Yoga / Fivelements</div>
+        <p class="card-desc">The best way to crush jet lag. Hot-cold contrast therapy to reset our bodies and feel fully alive on arrival day.</p>
+        <div class="card-highlight">⚡ Amazing jet lag recovery</div>
+        <div class="card-links">
+          <a class="card-link" href="https://taksu.com" target="_blank">🔗 Taksu Yoga</a>
+        </div>
+        <ul class="checklist" data-section="canggu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">3 rounds cold exposure</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hydrate with electrolytes</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No alcohol same day</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sunrise Beach -->
+    <div class="card card-wide reveal">
+      <div class="card-color-bar bar-coral"></div>
+      <div class="card-photo-placeholder" style="height: 240px;">
+        <span class="ph-icon">🌊</span>
+        <span class="ph-text">Echo Beach sunrise photo goes here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🌊</span>
+        <h3 class="card-title">Sunrise Beach Ritual</h3>
+        <div class="card-location">📍 Echo Beach, Canggu</div>
+        <p class="card-desc">Our first morning together on the island. Barefoot in the sand, watching the sun come up. We set our shared intention for the trip and offer a small flower to the ocean.</p>
+        <div class="card-highlight">⚡ Barefoot grounding — our first ritual together</div>
+        <ul class="checklist" data-section="canggu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">15-min silent walk together</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Set our shared trip intention</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Offer small flower to the ocean</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cultural Orientation -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-plum"></div>
+      <div class="card-body">
+        <span class="card-emoji">💪</span>
+        <h3 class="card-title">Gym, Food & Beach Clubs</h3>
+        <div class="card-location">📍 Canggu</div>
+        <p class="card-desc">Recovery mode. We hit a gym, eat incredible food, explore the beach club scene, and ease into the trip with no pressure. Canggu has some of the best cafes in Bali — we're going to eat well.</p>
+        <div class="card-highlight">⚡ Light social vibes — recovery first</div>
+        <ul class="checklist" data-section="canggu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Find a good gym</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Beach club sunset session</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Explore Canggu food scene</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cultural Orientation -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-gold"></div>
+      <div class="card-body">
+        <span class="card-emoji">🧠</span>
+        <h3 class="card-title">Cultural Orientation Session</h3>
+        <div class="card-location">📍 Hire local Balinese guide — half day</div>
+        <p class="card-desc">Before we explore deeper, we learn. A local guide walks us through offerings, temple etiquette, and the spirit of the island so we can experience it with respect and depth.</p>
+        <div class="card-links">
+          <a class="card-link" href="https://www.klook.com" target="_blank">🔗 Klook</a>
+          <a class="card-link" href="https://www.airbnb.com/experiences" target="_blank">🔗 Airbnb Experiences</a>
+        </div>
+        <ul class="checklist" data-section="canggu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Learn about Canang Sari offerings</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Learn basic temple etiquette</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Learn Balinese greeting</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">🌺 · 🌺 · 🌺</div>
+
+<!-- ====== SECTION 2: UBUD ====== -->
+<section class="section" id="ubud">
+  <div class="section-header reveal">
+    <span class="section-icon">🌿</span>
+    <div class="section-label">Mar 14–17 · Sat–Mon · 2–3 Nights</div>
+    <h2 class="section-title">Ubud — Spiritual Immersion</h2>
+    <p class="section-subtitle">The heart of Bali. We go deeper here — meet up with Lily & new friends, sacred water purification, ATV sunrise adventure, jungle temples, and yoga that actually moves something inside you.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Tri Desna Water Purification -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-jungle"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">💧</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">💧</span>
+        <h3 class="card-title">Private Water Purification — Tri Desna</h3>
+        <div class="card-location">📍 Tri Desna · Sayan, Ubud · Private Melukat Ceremony</div>
+        <p class="card-desc">This isn't a tourist temple line — it's a private ceremony just for us. It starts with a reading session with Ibu Desak, then a sacred water purification (Melukat) with holy floral water, and ends with a blessing ceremony with Ibu Helena. About 1–1.5 hours. They provide everything — sarong, offerings, towel.</p>
+        <div class="card-highlight">⚡ Private ceremony — no other guests during our session</div>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.7;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Pricing & Details</div>
+          <div><strong>Purification Package:</strong> IDR 1,950,000/person (~$120 USD)</div>
+          <div style="font-size: 0.8rem; color: var(--text-light);">Includes: Reading + Water Purification + Blessing</div>
+          <div style="margin-top: 0.4rem;"><strong>Optional Photographer:</strong> IDR 350,000 (1–2 ppl) / IDR 450,000 (3–4 ppl)</div>
+          <div style="margin-top: 0.4rem;"><strong>Reading Only:</strong> IDR 450,000/session ($30 USD) · 15–30 min</div>
+          <div style="margin-top: 0.4rem;"><strong>Deposit:</strong> IDR 500,000/person (non-refundable)</div>
+          <div style="margin-top: 0.6rem; font-size: 0.8rem; color: var(--coral); font-weight: 600;">⚠️ Book 2–3 months in advance via WhatsApp on their Instagram</div>
+        </div>
+        <div class="card-links">
+          <a class="card-link" href="https://www.instagram.com/tridesnahealing/" target="_blank">📱 @tridesnahealing on Instagram</a>
+          <a class="card-link" href="https://tridesnahealing.com/" target="_blank">🔗 tridesnahealing.com</a>
+          <a class="card-link" href="https://wa.me/628123833773" target="_blank">💬 WhatsApp to Book</a>
+        </div>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book via WhatsApp (2–3 months ahead!)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pay deposit (IDR 500K/person)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book optional photographer</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bring extra undergarments (you'll get wet)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Arrive on time</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No shower/hair wash for 3 hrs after</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Journal after ceremony</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mt Batur -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-coral"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🏔</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🏔</span>
+        <h3 class="card-title">ATV Sunrise Adventure</h3>
+        <div class="card-location">📍 Mount Batur area</div>
+        <p class="card-desc">We ride ATVs to catch the sunrise over the volcano. The early wake-up is worth it — the views over the crater lake at dawn are the kind of morning you never forget. Hot spring soak after.</p>
+        <div class="card-highlight">⚡ Private guide — skip the big tour groups</div>
+        <div class="card-links">
+          <a class="card-link" href="https://www.getyourguide.com" target="_blank">🔗 GetYourGuide</a>
+          <a class="card-link" href="https://www.klook.com" target="_blank">🔗 Klook</a>
+        </div>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book private guide</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pack 1L water minimum</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No rushing descent</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Post-hike hot spring soak</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Temples -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-gold"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🛕</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🛕</span>
+        <h3 class="card-title">Temple Depth Day</h3>
+        <div class="card-location">📍 Gunung Kawi & Goa Gajah</div>
+        <p class="card-desc">Ancient rock-carved temples hidden in the jungle. We go slow, ask questions, and soak in the mythology of the Barong, Rangda, and ancestor shrines.</p>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask about Barong myth</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask about Rangda</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask about ancestor shrines</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Attend evening ceremony if possible</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Yoga Barn -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-plum"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🕊</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🕊</span>
+        <h3 class="card-title">Silent Meditation & Sound Healing</h3>
+        <div class="card-location">📍 The Yoga Barn, Ubud</div>
+        <p class="card-desc">We slow down completely. Silent meditation, maybe ecstatic dance if we're feeling it, and a sound healing session to close out Ubud on a transcendent note.</p>
+        <div class="card-links">
+          <a class="card-link" href="https://www.theyogabarn.com" target="_blank">🔗 The Yoga Barn</a>
+        </div>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">1 silent meditation session</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">1 ecstatic dance (optional)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">1 sound healing session</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Rice Terraces -->
+    <div class="card card-wide reveal">
+      <div class="card-color-bar bar-jungle"></div>
+      <div class="card-photo-placeholder" style="height: 240px;">
+        <span class="ph-icon">🌾</span>
+        <span class="ph-text">Tegallalang Rice Terrace photo goes here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🌾</span>
+        <h3 class="card-title">Rice Terraces at Dawn</h3>
+        <div class="card-location">📍 Tegallalang Rice Terrace</div>
+        <p class="card-desc">We arrive before the crowds hit. A local farmer walks us through the ancient Subak irrigation system — the philosophy of shared water that's been unchanged for centuries. Green as far as you can see.</p>
+        <div class="card-highlight">⚡ Arrive before 8AM — hire a farmer as guide</div>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Arrive before 8AM</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hire local farmer guide</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Learn the Subak irrigation philosophy</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">🐚 · 🐚 · 🐚</div>
+
+<!-- ====== SECTION 3: OCEAN ====== -->
+<section class="section" id="islands">
+  <div class="section-header reveal">
+    <span class="section-icon">🌊</span>
+    <div class="section-label">Mar 17–22 · Mon–Sun · 6 Nights (Flexible)</div>
+    <h2 class="section-title">Island Hopping — Ocean & Adventure</h2>
+    <p class="section-subtitle">This is the flexible half. We only book 2–3 nights ahead and let the vibes guide us. Gili Islands, Nusa Lembongan, and raw ocean adventures — crystal water, reef sharks, manta rays, and sunsets that make you hold hands and say nothing.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Gili T -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-ocean"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🐠</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🍄</span>
+        <h3 class="card-title">Gili Trawangan — Dive Days</h3>
+        <div class="card-location">📍 Gili Trawangan</div>
+        <p class="card-desc">The main dive hub. Reef sharks at Shark Point, a wreck dive, and warm water visibility that feels like flying. We push our limits a little here.</p>
+        <div class="card-links">
+          <a class="card-link" href="https://www.mantadive.com" target="_blank">🔗 Manta Dive</a>
+          <a class="card-link" href="https://www.blue-marlin-dive.com" target="_blank">🔗 Blue Marlin Dive</a>
+        </div>
+        <ul class="checklist" data-section="ocean">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Reef shark dive at Shark Point</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Wreck dive</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check Nitrox certification</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No flying 24 hrs after dive</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Gili Air -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-coral"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🌴</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🌿</span>
+        <h3 class="card-title">Gili Air — Our Slow Day</h3>
+        <div class="card-location">📍 Gili Air</div>
+        <p class="card-desc">The quieter island. This is where we put the phones down, watch the sunrise from the beach, and just… be. A digital detox day and a couples sunset ritual.</p>
+        <div class="card-highlight">⚡ More balanced — perfect for a reset day</div>
+        <ul class="checklist" data-section="ocean">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunrise beach meditation together</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Digital detox day — phones off</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Couples sunset ritual</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Gili Asahan -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-jungle"></div>
+      <div class="card-body">
+        <span class="card-emoji">🏝</span>
+        <h3 class="card-title">Gili Asahan — Our Island Base</h3>
+        <div class="card-location">📍 Gili Asahan · 3–6 nights</div>
+        <p class="card-desc">This is our home base for the island stretch. Raw ocean, macro diving, turtle encounters, and stronger currents. Off the beaten path — real ocean lovers only. We go as deep as the vibe takes us.</p>
+        <div class="card-highlight">⚡ Stronger currents — advanced diving</div>
+        <ul class="checklist" data-section="ocean">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">2 dives max per day</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hydrate heavily</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Rest day after 2 dive days</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nusa -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-gold"></div>
+      <div class="card-photo-placeholder">
+        <span class="ph-icon">🐢</span>
+        <span class="ph-text">Our photo here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🐢</span>
+        <h3 class="card-title">Nusa Lembongan — Manta Rays</h3>
+        <div class="card-location">📍 Nusa Lembongan</div>
+        <p class="card-desc">Chill island vibes with legendary diving. Crystal Bay for manta rays, mangrove tours, and the kind of turquoise water that doesn't look real. A perfect add-on from the Gilis.</p>
+        <div class="card-links">
+          <a class="card-link" href="https://www.crystalbaydivers.com" target="_blank">🔗 Crystal Bay Divers</a>
+        </div>
+        <ul class="checklist" data-section="ocean">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Confirm tide conditions</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Avoid rough sea days</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book early departure ferry</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">🌺 · 🌺 · 🌺</div>
+
+<!-- ====== SECTION 4: ULUWATU ====== -->
+<section class="section" id="uluwatu">
+  <div class="section-header reveal">
+    <span class="section-icon">🛕</span>
+    <div class="section-label">If We Leave the Islands · 1–3 Nights · Close to DPS</div>
+    <h2 class="section-title">Uluwatu — The Grand Finale</h2>
+    <p class="section-subtitle">If we decide to head back from the islands early, Uluwatu is the perfect closer. Clifftop temples, a fire dance at sunset, and our final reflection dinner overlooking the Indian Ocean — right near the airport for our flight out.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card card-wide reveal">
+      <div class="card-color-bar bar-coral"></div>
+      <div class="card-photo-placeholder" style="height: 260px;">
+        <span class="ph-icon">🌅</span>
+        <span class="ph-text">Uluwatu sunset photo goes here</span>
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🌅</span>
+        <h3 class="card-title">Sunset at the Cliff Temple</h3>
+        <div class="card-location">📍 Uluwatu Temple</div>
+        <p class="card-desc">Perched on a cliff 70 meters above the ocean. We watch the Kecak fire dance as the sun drops into the sea, then have our final reflection dinner together. The perfect ending.</p>
+        <ul class="checklist" data-section="uluwatu">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunset at cliff temple</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Watch Kecak fire dance</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Final reflection dinner together</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">🌸 · 🌸 · 🌸</div>
+
+<!-- ====== SECTION 5: CULTURE ====== -->
+<section class="section" id="culture">
+  <div class="section-header reveal">
+    <span class="section-icon">🎭</span>
+    <div class="section-label">Woven Throughout</div>
+    <h2 class="section-title">Deeper Cultural Experiences</h2>
+    <p class="section-subtitle">These aren't on the tourist trail. This is how we connect with the real Bali — through families, ceremonies, and making offerings with our own hands.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card reveal">
+      <div class="card-color-bar bar-plum"></div>
+      <div class="card-body">
+        <span class="card-emoji">🎭</span>
+        <h3 class="card-title">Traditional Ceremony</h3>
+        <p class="card-desc">If the timing aligns — a full moon ceremony, or an Odalan temple anniversary festival. These are sacred, powerful, and unlike anything we've ever experienced together.</p>
+      </div>
+    </div>
+
+    <div class="card card-wide reveal">
+      <div class="card-color-bar bar-jungle"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌸</span>
+        <h3 class="card-title">Learn to Make Offerings Together</h3>
+        <div class="card-location">📍 Private lesson in Ubud village</div>
+        <p class="card-desc">We sit with a local woman and learn to weave a Canang Sari — the small palm leaf offering you see everywhere. We learn the symbolism behind each flower and direction, then place our own at a temple.</p>
+        <ul class="checklist" data-section="culture">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Make a Canang Sari together</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Understand the symbolism</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Offer at a temple ourselves</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== LOVE NOTE ====== -->
+<section class="love-note">
+  <div class="love-note-content reveal">
+    <h2>A Note For You <span class="heart-float">💕</span></h2>
+    <p>I planned this because you deserve to experience something extraordinary. Not just a vacation — but a real adventure that brings us closer. Every sunrise, every dive, every quiet moment is something I want to share with you. This is just the beginning.</p>
+    <br>
+    <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--gold-light);">— With all my love</p>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-brand">Our Bali Adventure 🌺</div>
+  <p>Planned with love, intention, and way too many browser tabs.</p>
+</footer>
+
+<script>
+// ====== FLOATING PARTICLES ======
+const particles = document.getElementById('particles');
+const emojis = ['🌺', '🌸', '🌿', '🐚', '✨', '🦋', '🌊', '💕', '🌴', '🐢'];
+
+for (let i = 0; i < 20; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDelay = Math.random() * 8 + 's';
+  p.style.animationDuration = (6 + Math.random() * 6) + 's';
+  p.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+  particles.appendChild(p);
+}
+
+// ====== CHECKLIST TOGGLE ======
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  const box = el.querySelector('.check-box');
+  box.textContent = el.classList.contains('checked') ? '✓' : '';
+  updateProgress();
+  saveState();
+}
+
+// ====== PROGRESS BAR ======
+function updateProgress() {
+  const all = document.querySelectorAll('.checklist li');
+  const checked = document.querySelectorAll('.checklist li.checked');
+  const pct = all.length > 0 ? (checked.length / all.length * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent =
+    `${checked.length} of ${all.length} items checked — ${Math.round(pct)}% ready!`;
+}
+
+// ====== SAVE/LOAD STATE ======
+function saveState() {
+  const items = document.querySelectorAll('.checklist li');
+  const state = [];
+  items.forEach((el, i) => {
+    if (el.classList.contains('checked')) state.push(i);
+  });
+  try { localStorage.setItem('bali-trip-checks', JSON.stringify(state)); } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const state = JSON.parse(localStorage.getItem('bali-trip-checks'));
+    if (state && state.length) {
+      const items = document.querySelectorAll('.checklist li');
+      state.forEach(i => {
+        if (items[i]) {
+          items[i].classList.add('checked');
+          items[i].querySelector('.check-box').textContent = '✓';
+        }
+      });
+    }
+  } catch(e) {}
+  updateProgress();
+}
+
+loadState();
+
+// ====== SCROLL REVEAL ======
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ====== ACTIVE NAV ======
+const sections = document.querySelectorAll('.section[id]');
+const navItems = document.querySelectorAll('.nav-item');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 200) current = s.id;
+  });
+  navItems.forEach(n => {
+    n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
