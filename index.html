@@ -7,22 +7,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --sand: #F5E6D3;
-  --sand-light: #FFF8F0;
-  --ocean: #2B6E7E;
-  --ocean-deep: #1A4A56;
-  --ocean-light: #6BB5C4;
-  --coral: #E8766A;
-  --coral-soft: #F4A59A;
-  --jungle: #4A7C59;
-  --jungle-light: #7BB98A;
-  --gold: #D4A853;
-  --gold-light: #F0D68A;
-  --plum: #6B4C6E;
-  --blush: #F2D5CE;
+  --sand: #F9EDE3;
+  --sand-light: #FFF5F5;
+  --ocean: #7A3F55;
+  --ocean-deep: #4A1E30;
+  --ocean-light: #C48B9F;
+  --coral: #C4505A;
+  --coral-soft: #F0A5AB;
+  --jungle: #4A7C56;
+  --jungle-light: #9BC4A1;
+  --gold: #B07840;
+  --gold-light: #F2D1A5;
+  --plum: #6B3A6B;
+  --blush: #F5D5D5;
   --white: #FFFFFF;
-  --text: #2D2A26;
-  --text-light: #6B6560;
+  --text: #2A1A20;
+  --text-light: #5C4550;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -45,7 +45,7 @@ body {
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, #1A4A56 0%, #2B6E7E 30%, #6BB5C4 60%, #F0D68A 85%, #E8766A 100%);
+  background: linear-gradient(135deg, #3D1A28 0%, #6B3A50 25%, #B07088 50%, #E8BFA0 75%, #C4505A 100%);
   overflow: hidden;
 }
 
@@ -54,8 +54,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(74,124,89,0.3) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232,118,106,0.2) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(107,143,113,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,114,122,0.2) 0%, transparent 70%);
   z-index: 1;
 }
 
@@ -84,6 +84,49 @@ body {
   position: relative;
   z-index: 2;
   padding: 2rem;
+}
+
+.hero-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  animation: fadeSlideDown 1s ease-out 0.1s both;
+}
+
+.hero-logo-monogram {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.hero-logo-amp {
+  font-family: 'Dancing Script', cursive;
+  color: var(--gold-light);
+  font-size: 0.8em;
+  margin: 0 0.05em;
+}
+
+.hero-logo-names {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: var(--gold-light);
+  margin-top: 0.25rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.hero-logo-tagline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.4rem;
 }
 
 .hero-badge {
@@ -483,7 +526,7 @@ body {
 .progress-bar-fill {
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--ocean-light), var(--jungle-light), var(--gold), var(--coral-soft));
+  background: linear-gradient(90deg, var(--ocean-light), var(--coral-soft), var(--gold-light), var(--plum));
   background-size: 300% 100%;
   animation: shimmer 3s ease-in-out infinite;
   transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -559,6 +602,21 @@ body {
   gap: 0.5rem;
 }
 
+/* ====== VILLA PHOTO ====== */
+.villa-photo {
+  width: 100%;
+  max-height: 280px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.villa-photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ====== HERO PHOTO ====== */
 .hero-photo-wrapper {
   display: flex;
@@ -576,7 +634,7 @@ body {
 }
 
 .hero-photo-frame::before {
-  content: '💕';
+  content: '🌹';
   position: absolute;
   top: -18px;
   left: 50%;
@@ -633,7 +691,7 @@ body {
 .love-note {
   text-align: center;
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, var(--ocean-deep), var(--ocean), var(--jungle));
+  background: linear-gradient(135deg, var(--ocean-deep), var(--ocean), var(--plum));
   color: white;
   position: relative;
   overflow: hidden;
@@ -714,6 +772,9 @@ body {
   .section-subtitle { font-size: 0.92rem; line-height: 1.6; }
   .section-icon { font-size: 2.25rem; }
   .hero { min-height: 100svh; }
+  .hero-logo-names { font-size: 1.8rem; }
+  .hero-logo-tagline { font-size: 0.7rem; }
+  .hero-logo-text { margin-bottom: 1rem; }
   .hero h1 { font-size: 2.5rem; }
   .hero h1 em { font-size: 1.05em; }
   .hero-subtitle { font-size: 0.92rem; padding: 0 1.25rem; line-height: 1.6; }
@@ -750,6 +811,8 @@ body {
   .hero-photo-caption { font-size: 1.05rem; }
   .hero-photo-deco-left, .hero-photo-deco-right { display: none; }
   .hero-photo-frame::before { font-size: 1.2rem; top: -14px; }
+  .villa-photo { max-height: 200px; }
+  .villa-photo img { height: 200px; }
 }
 
 /* Extra small phones */
@@ -875,6 +938,10 @@ body {
 <section class="hero">
   <div class="hero-particles" id="particles"></div>
   <div class="hero-content">
+    <div class="hero-logo-text">
+      <span class="hero-logo-names">Marlon & Vanessa</span>
+      <span class="hero-logo-tagline">— Travel Adventures —</span>
+    </div>
     <div class="hero-badge">✈️ &nbsp; March 11–22 · 12 Nights</div>
     <h1>Our <em>Bali</em> Baecation</h1>
     <p class="hero-subtitle">Sunrises, sacred temples, ocean dives & everything in between — just us.</p>
@@ -889,7 +956,9 @@ body {
 <section class="love-note">
   <div class="love-note-content reveal">
     <h2>A Note For My Queen <span class="heart-float">💕</span></h2>
-    <p>I created this because you deserve to experience something extraordinary. Not just a vacation — but a real adventure that brings us closer. Every sunrise, every dive, every quiet moment is something I want to experience with you. This is just the beginning.</p>
+    <p>I created this because you deserve something extraordinary. Not just a vacation… but an adventure with sandy toes, salty kisses, and memories we'll replay forever. Every sunrise in Bali, every ocean dive, every quiet moment under those glowing Indonesian skies — I want all of it with you. I can't wait to explore temples, chase waterfalls, and experience some good massages.</p>
+    <br>
+    <p>Sunsets that make Miami life jealous, waves that try to steal our balance and late-night talks where the only thing brighter than the stars is your smile. This isn't just a trip. It's us choosing adventure. It's us choosing us. Cheers to paradise. 🌴💛 oh! and everyday BBC. 🍆</p>
     <br>
     <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--gold-light);">— With all my love</p>
   </div>
@@ -898,12 +967,12 @@ body {
 <!-- ====== OUR PHOTO ====== -->
 <div class="hero-photo-wrapper reveal">
   <div class="hero-photo-frame">
-    <span class="hero-photo-deco-left">🌺</span>
-    <span class="hero-photo-deco-right">🌺</span>
+    <span class="hero-photo-deco-left">🌹</span>
+    <span class="hero-photo-deco-right">🌹</span>
     <div class="hero-photo" id="heroPhoto">
-      <img src="photo.png" alt="Us">
+      <img src="photo.jpg" alt="Us">
     </div>
-    <div class="hero-photo-caption">us & our entire zoo 🐾</div>
+    <div class="hero-photo-caption">us, sunset, & roses on the water 🌹</div>
   </div>
 </div>
 
@@ -939,6 +1008,31 @@ body {
   </div>
 
   <div class="cards-grid">
+
+    <!-- Villa -->
+    <div class="card card-wide reveal">
+      <div class="card-color-bar bar-gold"></div>
+      <div class="villa-photo">
+        <img src="villa.png" alt="Villa Papaz">
+      </div>
+      <div class="card-body">
+        <span class="card-emoji">🏡</span>
+        <h3 class="card-title">Our Villa — Villa Papaz</h3>
+        <div class="card-location">📍 Nyanyi Beach, Kediri · Next to Luna Beach Club</div>
+        <p class="card-desc">Our own private luxury villa with a pool, king bed, open-air living, and daily cleaning. Walking distance to Nyanyi Beach and right next to Luna Beach Club. Superhost Max has been hosting in Bali for 11+ years — 24/7 concierge, airport transfers, private cook, motorbike rentals, even massages at the villa. This is home base.</p>
+        <div class="card-highlight">⚡ ★ 4.86 · Guest Favorite · Private pool · 25 min from Canggu</div>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.7;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🏡 What's Included</div>
+          <div>Private pool · King bed · Fast WiFi (403 Mbps) · Kitchen</div>
+          <div>Daily cleaning · Pool towels · Safety box · Welcome drink</div>
+          <div style="margin-top: 0.4rem; font-weight: 600;">On Request: Airport transfer · Private cook · Motorbike rental · Spa at villa</div>
+          <div style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-light);">Check-in 3PM · Checkout 11AM · 3 guests max</div>
+        </div>
+        <div class="card-links">
+          <a class="card-link" href="https://www.airbnb.com/rooms/1177122259388600650" target="_blank">🔗 View on Airbnb</a>
+        </div>
+      </div>
+    </div>
 
     <!-- Breathwork -->
     <div class="card reveal">
@@ -1037,7 +1131,7 @@ body {
   </div>
 </section>
 
-<div class="divider">🌺 · 🌺 · 🌺</div>
+<div class="divider">🌹 · 🐱 · 🌹</div>
 
 <!-- ====== SECTION 2: UBUD ====== -->
 <section class="section" id="ubud">
@@ -1050,8 +1144,8 @@ body {
 
   <div class="cards-grid">
 
-    <!-- Tri Desna Water Purification -->
-    <div class="card reveal">
+    <!-- Tri Desna Water Purification - FULL WIDTH (it's the main event) -->
+    <div class="card card-wide reveal">
       <div class="card-color-bar bar-jungle"></div>
       <div class="card-body">
         <span class="card-emoji">💧</span>
@@ -1085,14 +1179,14 @@ body {
       </div>
     </div>
 
-    <!-- Mt Batur -->
+    <!-- ROW: ATV + Temples (paired, similar size) -->
     <div class="card reveal">
       <div class="card-color-bar bar-coral"></div>
       <div class="card-body">
         <span class="card-emoji">🏔</span>
         <h3 class="card-title">ATV Sunrise Adventure</h3>
         <div class="card-location">📍 Mount Batur area</div>
-        <p class="card-desc">We ride ATVs to catch the sunrise over the volcano. The early wake-up is worth it — the views over the crater lake at dawn are the kind of morning you never forget. Hot spring soak after.</p>
+        <p class="card-desc">We ride ATVs to catch the sunrise over the volcano. Views over the crater lake at dawn, then a hot spring soak after. Worth every second of the early wake-up.</p>
         <div class="card-highlight">⚡ Private guide — skip the big tour groups</div>
         <div class="card-links">
           <a class="card-link" href="https://www.getyourguide.com" target="_blank">🔗 GetYourGuide</a>
@@ -1101,13 +1195,11 @@ body {
         <ul class="checklist" data-section="ubud">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book private guide</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pack 1L water minimum</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No rushing descent</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Post-hike hot spring soak</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Post-ride hot spring soak</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Temples -->
     <div class="card reveal">
       <div class="card-color-bar bar-gold"></div>
       <div class="card-body">
@@ -1124,14 +1216,14 @@ body {
       </div>
     </div>
 
-    <!-- Yoga Barn -->
+    <!-- ROW: Meditation + Chakra Dhara (paired, both wellness) -->
     <div class="card reveal">
       <div class="card-color-bar bar-plum"></div>
       <div class="card-body">
         <span class="card-emoji">🕊</span>
-        <h3 class="card-title">Silent Meditation & Sound Healing</h3>
+        <h3 class="card-title">Meditation & Sound Healing</h3>
         <div class="card-location">📍 The Yoga Barn, Ubud</div>
-        <p class="card-desc">We slow down completely. Silent meditation, maybe ecstatic dance if we're feeling it, and a sound healing session to close out Ubud on a transcendent note.</p>
+        <p class="card-desc">We slow down completely. Silent meditation, maybe ecstatic dance if we're feeling it, and a sound healing session to close out on a transcendent note.</p>
         <div class="card-links">
           <a class="card-link" href="https://www.theyogabarn.com" target="_blank">🔗 The Yoga Barn</a>
         </div>
@@ -1143,7 +1235,26 @@ body {
       </div>
     </div>
 
-    <!-- Rice Terraces -->
+    <div class="card reveal">
+      <div class="card-color-bar bar-ocean"></div>
+      <div class="card-body">
+        <span class="card-emoji">✨</span>
+        <h3 class="card-title">Chakra Dhara — Full Body & Soul</h3>
+        <div class="card-location">📍 Bali Botanica · Jl. Sanggingan, Ubud</div>
+        <p class="card-desc">A 2.5-hour Ayurvedic oil treatment on every chakra point. Slow, repetitive movements that release physical and emotional blockages. Full reset.</p>
+        <div class="card-highlight">⚡ 2 hrs 30 min · IDR 800K/person (~$50)</div>
+        <div class="card-links">
+          <a class="card-link" href="https://balibotanica.com/product/chakra-dhara/" target="_blank">🔗 Bali Botanica</a>
+          <a class="card-link" href="https://wa.link/lscehs" target="_blank">💬 WhatsApp</a>
+        </div>
+        <ul class="checklist" data-section="ubud">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book Chakra Dhara session for two</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Allow 2.5 hours — don't rush after</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Rice Terraces - FULL WIDTH (big scenic closer) -->
     <div class="card card-wide reveal">
       <div class="card-color-bar bar-jungle"></div>
       <div class="card-body">
@@ -1163,7 +1274,7 @@ body {
   </div>
 </section>
 
-<div class="divider">🐚 · 🐚 · 🐚</div>
+<div class="divider">🧸 · 🌷 · 🧸</div>
 
 <!-- ====== SECTION 3: OCEAN ====== -->
 <section class="section" id="islands">
@@ -1253,7 +1364,7 @@ body {
   </div>
 </section>
 
-<div class="divider">🌺 · 🌺 · 🌺</div>
+<div class="divider">🌹 · 🐱 · 🌹</div>
 
 <!-- ====== SECTION 4: ULUWATU ====== -->
 <section class="section" id="uluwatu">
@@ -1282,7 +1393,7 @@ body {
   </div>
 </section>
 
-<div class="divider">🌸 · 🌸 · 🌸</div>
+<div class="divider">🐾 · 🌹 · 🐾</div>
 
 <!-- ====== SECTION 5: CULTURE ====== -->
 <section class="section" id="culture">
@@ -1290,7 +1401,7 @@ body {
     <span class="section-icon">🎭</span>
     <div class="section-label">Woven Throughout</div>
     <h2 class="section-title">Deeper Cultural Experiences</h2>
-    <p class="section-subtitle">These aren't on the tourist trail. This is how we connect with the real Bali — through families, ceremonies, and making offerings with our own hands.</p>
+    <p class="section-subtitle">These aren't on the tourist trail. This is how we connect with the real Bali — through ceremonies and making offerings with our own hands.</p>
   </div>
 
   <div class="cards-grid">
@@ -1300,20 +1411,23 @@ body {
       <div class="card-body">
         <span class="card-emoji">🎭</span>
         <h3 class="card-title">Traditional Ceremony</h3>
-        <p class="card-desc">If the timing aligns — a full moon ceremony, or an Odalan temple anniversary festival. These are sacred, powerful, and unlike anything we've ever experienced together.</p>
+        <p class="card-desc">If the timing aligns — a full moon ceremony, or an Odalan temple anniversary festival. These are sacred, powerful, and unlike anything we've ever experienced together. We ask our guide to check what's happening while we're there.</p>
+        <ul class="checklist" data-section="culture">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask guide about ceremonies during our dates</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Attend if timing aligns</span></li>
+        </ul>
       </div>
     </div>
 
-    <div class="card card-wide reveal">
+    <div class="card reveal">
       <div class="card-color-bar bar-jungle"></div>
       <div class="card-body">
         <span class="card-emoji">🌸</span>
-        <h3 class="card-title">Learn to Make Offerings Together</h3>
+        <h3 class="card-title">Make Offerings Together</h3>
         <div class="card-location">📍 Private lesson in Ubud village</div>
-        <p class="card-desc">We sit with a local woman and learn to weave a Canang Sari — the small palm leaf offering you see everywhere. We learn the symbolism behind each flower and direction, then place our own at a temple.</p>
+        <p class="card-desc">We sit with a local woman and learn to weave a Canang Sari — the small palm leaf offering you see everywhere. We learn the symbolism behind each flower, then place our own at a temple.</p>
         <ul class="checklist" data-section="culture">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Make a Canang Sari together</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Understand the symbolism</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Offer at a temple ourselves</span></li>
         </ul>
       </div>
@@ -1324,16 +1438,17 @@ body {
 
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
-  <div class="footer-brand">Our Bali Baecation 🌺</div>
+  <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--ocean); margin-bottom: 0.5rem;">M & V</div>
+  <div class="footer-brand">Our Bali Baecation 🌹</div>
   <p>Planned with love, intention, and way too many browser tabs.</p>
 </footer>
 
 <script>
 // ====== FLOATING PARTICLES ======
 const particles = document.getElementById('particles');
-const emojis = ['🌺', '🌸', '🌿', '🐚', '✨', '🦋', '🌊', '💕', '🌴', '🐢'];
+const emojis = ['🐱', '🧸', '🌹', '🐻', '💐', '🧸', '🌹', '💕', '🐱', '🌷', '🐾', '❤️', '🌺', '🎀', '💗'];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 28; i++) {
   const p = document.createElement('div');
   p.className = 'particle';
   p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
