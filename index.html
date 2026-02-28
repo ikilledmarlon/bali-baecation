@@ -813,6 +813,26 @@ body {
   .hero-photo-frame::before { font-size: 1.2rem; top: -14px; }
   .villa-photo { max-height: 200px; }
   .villa-photo img { height: 200px; }
+
+  /* Island comparison mobile */
+  .island-compare-grid { grid-template-columns: 1fr !important; }
+
+  /* Info boxes mobile - tighter padding */
+  [style*="border-radius: 12px"][style*="padding"] {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Table scrolling on mobile */
+  table { font-size: 0.72rem !important; }
+  table th, table td { padding: 0.5rem 0.35rem !important; }
+
+  /* Comparison table container */
+  [style*="overflow-x: auto"] { -webkit-overflow-scrolling: touch; }
+
+  /* Prevent link overflow */
+  a { word-break: break-word; }
 }
 
 /* Extra small phones */
@@ -823,6 +843,11 @@ body {
   .section-title { font-size: 1.5rem; }
   .card-title { font-size: 1rem; }
   .card-body { padding: 1rem; }
+  .card-desc { font-size: 0.82rem; }
+  .card-links { flex-wrap: wrap; }
+  .card-link { font-size: 0.7rem; }
+  .hero-logo-names { font-size: 1.5rem; }
+  .hero-logo-tagline { font-size: 0.6rem; letter-spacing: 0.2em; }
 }
 
 /* ====== TRIP TIMELINE ====== */
@@ -1044,11 +1069,12 @@ body {
         <p class="card-desc">We pick a gym and get a session in. Here are our options ranked by vibe — some have Hyrox and fight classes too.</p>
         <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
           <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💪 Day Pass Options</div>
-          <div><strong>Elite Gym</strong> — Hyrox, mobility classes · <a href="https://elitefitbali.com" target="_blank" style="color: var(--ocean);">Website</a> · <a href="https://maps.app.goo.gl/wSaPRUfJg2K52Jwp9" target="_blank" style="color: var(--ocean);">Map</a></div>
-          <div><strong>Body Factory</strong> — 540K · Hyrox, full body training · <a href="https://maps.app.goo.gl/oq8h8JTQG4YjuvnSA" target="_blank" style="color: var(--ocean);">Map</a></div>
-          <div><strong>Wrong Gym</strong> — 500K · No classes · <a href="https://maps.app.goo.gl/rjRau73v8TfWv4776" target="_blank" style="color: var(--ocean);">Map</a></div>
-          <div><strong>Surya Gym</strong> — 350K / 450K w/ Fight Club · <a href="https://maps.app.goo.gl/nQMsLTw1WWnuDsAz8" target="_blank" style="color: var(--ocean);">Map</a></div>
-          <div><strong>BYND Gym</strong> — 320K incl. classes · <a href="https://maps.app.goo.gl/CcNMBPN7fnGqkDJd6" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>⭐ Body Factory</strong> — 500K+ (~$30+) · Hyrox, full body, recovery zones · <a href="https://maps.app.goo.gl/oq8h8JTQG4YjuvnSA" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.3rem;">Our #1 pick — best classes & facilities</div>
+          <div><strong>Elite Gym</strong> — 350K–450K (~$22–28) · Hyrox, mobility · <a href="https://elitefitbali.com/membership/" target="_blank" style="color: var(--ocean);">Pricing</a> · <a href="https://maps.app.goo.gl/wSaPRUfJg2K52Jwp9" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>Wrong Gym</strong> — 500K (~$30) · Gym + spa access · <a href="https://wronggym.com/pages/memberships" target="_blank" style="color: var(--ocean);">Pricing</a> · <a href="https://maps.app.goo.gl/rjRau73v8TfWv4776" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>Surya Gym</strong> — 200K (~$12) · Budget-friendly · <a href="https://maps.app.goo.gl/nQMsLTw1WWnuDsAz8" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>BYND Fit</strong> — No day pass (1-wk 1.3M / 2-wk 1.9M) · <a href="https://byndfit.co/memberships" target="_blank" style="color: var(--ocean);">Pricing</a> · <a href="https://maps.app.goo.gl/CcNMBPN7fnGqkDJd6" target="_blank" style="color: var(--ocean);">Map</a></div>
         </div>
         <ul class="checklist" data-section="canggu">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pick a gym & get a session in</span></li>
@@ -1066,9 +1092,14 @@ body {
         <p class="card-desc">Aerial yoga, sound healing, flow classes — Canggu has some of the best studios in Bali. We ease into the trip through our bodies.</p>
         <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
           <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🪐 Studio Options</div>
-          <div><strong>Udara</strong> — 170K · Aerial yoga, sound healing · <a href="https://udara-bali.com" target="_blank" style="color: var(--ocean);">Website</a></div>
+          <div><strong>Udara Bali</strong> — 170K/class · Aerial yoga, sound healing · <a href="https://udara-bali.com" target="_blank" style="color: var(--ocean);">Website</a></div>
           <div style="font-size: 0.8rem; color: var(--text-light);">Vocal sound healing Mon–Sat 7:45–8:45am</div>
-          <div style="margin-top: 0.3rem;"><strong>Mission Flow Studio</strong> — 160K walk-in · <a href="https://missionflowstudio.com/package" target="_blank" style="color: var(--ocean);">Packages</a> · <a href="https://maps.app.goo.gl/vkEPLekZiJLMnijq5" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div style="margin-top: 0.3rem; padding: 0.5rem 0; border-top: 1px solid rgba(0,0,0,0.06);">
+            <strong>🏨 Udara Stay Option — Energy Upgrade Package</strong><br>
+            <span>IDR 5,900,000/night (~$360) · Min 3 nights · Breakfast included</span><br>
+            <span style="font-size: 0.8rem; color: var(--text-light);">Marvelous Wooden Room · 42m² · 2 pax · Total 3 nights: IDR 17,700,000 (~$1,080)</span>
+          </div>
+          <div style="margin-top: 0.3rem;"><strong>Mission Flow Studio</strong> — 160K drop-in (non-KITAS) · <a href="https://missionflowstudio.com/package" target="_blank" style="color: var(--ocean);">Buy Now</a> · <a href="https://maps.app.goo.gl/vkEPLekZiJLMnijq5" target="_blank" style="color: var(--ocean);">Map</a></div>
         </div>
         <ul class="checklist" data-section="canggu">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book a yoga or sound healing class</span></li>
@@ -1085,7 +1116,10 @@ body {
         <div class="card-location">📍 Right next to our villa · Book online</div>
         <p class="card-desc">Bali's latest beach club and it's literally next door to our villa. Day beds, ocean views, food & drinks minimum spend. This is our sunset spot.</p>
         <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
-          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Pricing (F&B minimum spend)</div>
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Pricing</div>
+          <div><strong>🎟️ General Admission:</strong> 250K++/person</div>
+          <div style="font-size: 0.8rem; color: var(--text-light);">Includes entry, 1 alcoholic or 2 non-alcoholic drinks, pools, DJs</div>
+          <div style="margin-top: 0.4rem;"><strong>🛋️ Daybeds & Seating:</strong> Minimum spend (credit toward food/drinks/shisha)</div>
           <div><strong>Day Bed (covered):</strong> 1.75M weekday (10am–1pm) / 1.9M (arrive anytime)</div>
           <div><strong>Sun Bed:</strong> 1.3M (arrive anytime)</div>
         </div>
@@ -1156,15 +1190,22 @@ body {
       <div class="card-body">
         <span class="card-emoji">🌊</span>
         <h3 class="card-title">Water Purification 2 — Beji Griya Waterfall</h3>
-        <div class="card-location">📍 Beji Griya Park Waterfall Temple · Abiansemal, Badung · ★ 4.5 (7,137 reviews)</div>
-        <p class="card-desc">A second water purification at a stunning waterfall temple. Different energy from Tri Desna — this one is outdoors at a Hindu temple with natural flowing water. A beautiful complement to the private ceremony.</p>
-        <div class="card-highlight">⚡ Waterfall temple purification — natural holy water</div>
+        <div class="card-location">📍 Beji Village, Tabanan Regency · Near Abiansemal · ★ 4.5 (7,137 reviews)</div>
+        <p class="card-desc">A natural waterfall with deep cultural and spiritual significance. Different energy from Tri Desna — this one is outdoors with flowing holy water. Most visitors do the full guided Melukat ceremony rather than just walking in.</p>
+        <div class="card-highlight">⚡ Access usually requires paying for the purification experience</div>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Pricing</div>
+          <div><strong>🎫 Entry Only:</strong> ~50K international (~$3)</div>
+          <div><strong>🛕 Melukat Purification:</strong> ~300K/person (~$18) — ceremony, guide, sarong, holy water</div>
+          <div><strong>📱 Tour Booking:</strong> $30–50+/person via GetYourGuide/Klook (includes pickup/drop-off)</div>
+          <div style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-light);">Includes: guided ceremony, traditional sarong, holy water, sometimes a drink</div>
+        </div>
         <div class="card-links">
           <a class="card-link" href="https://maps.app.goo.gl/zn2ZXC3yhiUFq3Ba9" target="_blank">📍 Google Maps</a>
         </div>
         <ul class="checklist" data-section="ubud">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Visit Beji Griya waterfall temple</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Wear sarong</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book Melukat ceremony (~300K/person)</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bring offering</span></li>
         </ul>
       </div>
@@ -1198,6 +1239,11 @@ body {
         <h3 class="card-title">Temple Depth Day</h3>
         <div class="card-location">📍 Gunung Kawi & Goa Gajah</div>
         <p class="card-desc">Ancient rock-carved temples hidden in the jungle. We go slow, ask questions, and soak in the mythology of the Barong, Rangda, and ancestor shrines.</p>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🎟️ Entrance Fees</div>
+          <div><strong>Goa Gajah:</strong> ~50K/adult (~$3–4) · 25K/child</div>
+          <div><strong>Gunung Kawi:</strong> ~50K/adult (~$3–4) · 25K/child</div>
+        </div>
         <ul class="checklist" data-section="ubud">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask about Barong myth</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Ask about Rangda</span></li>
@@ -1212,11 +1258,23 @@ body {
       <div class="card-color-bar bar-plum"></div>
       <div class="card-body">
         <span class="card-emoji">🕊</span>
-        <h3 class="card-title">Meditation & Sound Healing</h3>
-        <div class="card-location">📍 The Yoga Barn, Ubud</div>
-        <p class="card-desc">We slow down completely. Silent meditation, maybe ecstatic dance if we're feeling it, and a sound healing session to close out on a transcendent note.</p>
+        <h3 class="card-title">Yoga Barn — Meditation & Sound Healing</h3>
+        <div class="card-location">📍 The Yoga Barn, Ubud · 180+ classes/week</div>
+        <p class="card-desc">Silent meditation, ecstatic dance, sound healing, kundalini, aerial yoga — 180+ classes a week. Mats included. This is where we slow down completely.</p>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🎟️ Class Pricing</div>
+          <div><strong>Drop-in:</strong> 165K (~$10–12)</div>
+          <div><strong>3-Class Card:</strong> 450K (~$28)</div>
+          <div><strong>5-Class Card:</strong> 700K (~$43)</div>
+          <div style="margin-top: 0.4rem; padding-top: 0.4rem; border-top: 1px solid rgba(0,0,0,0.06);">
+            <strong>🌿 Retreat Packages</strong><br>
+            <span><strong>1-Day Blissful:</strong> 1.1M (~$70) — yoga, meditation, meals, healing</span><br>
+            <span><strong>3-Day Blissful:</strong> 2.25M (~$150) — multi-day wellness experience</span>
+          </div>
+          <div style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-light);">Mats included · Workshops/masterclasses priced separately · Towel rental available</div>
+        </div>
         <div class="card-links">
-          <a class="card-link" href="https://www.theyogabarn.com" target="_blank">🔗 The Yoga Barn</a>
+          <a class="card-link" href="https://theyogabarn.com" target="_blank">🔗 The Yoga Barn</a>
         </div>
         <ul class="checklist" data-section="ubud">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">1 silent meditation session</span></li>
@@ -1251,11 +1309,20 @@ body {
       <div class="card-body">
         <span class="card-emoji">🌾</span>
         <h3 class="card-title">Rice Terraces at Dawn</h3>
-        <div class="card-location">📍 Tegallalang Rice Terrace</div>
-        <p class="card-desc">We arrive before the crowds hit. A local farmer walks us through the ancient Subak irrigation system — the philosophy of shared water that's been unchanged for centuries. Green as far as you can see.</p>
-        <div class="card-highlight">⚡ Arrive before 8AM — hire a farmer as guide</div>
+        <div class="card-location">📍 Tegallalang Rice Terrace · 20 min north of Ubud · UNESCO World Heritage</div>
+        <p class="card-desc">Layered rice paddies carved into the hills, part of Bali's traditional Subak irrigation system. Especially magical at dawn when the light is soft and crowds are minimal. Bring small rupiah notes — many collection points don't give change.</p>
+        <div class="card-highlight">⚡ Arrive before 8AM — paths open ~6AM, ticket booths open ~8AM</div>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Costs</div>
+          <div><strong>🎟️ Entry:</strong> 15K–25K (~$1–2) · Uma Ceking area: 50K</div>
+          <div><strong>🎢 Bali Swings:</strong> 200K–400K+ (optional)</div>
+          <div><strong>🚡 Sky Bike/Zipline:</strong> 350K–450K+ (optional)</div>
+          <div><strong>🅿️ Parking:</strong> Free or 2K–5K</div>
+          <div style="margin-top: 0.3rem; font-size: 0.8rem; color: var(--text-light);">Small donations (~5K–10K) common for farmer paths & photos with locals</div>
+        </div>
         <ul class="checklist" data-section="ubud">
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Arrive before 8AM</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bring small rupiah notes</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hire local farmer guide</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Learn the Subak irrigation philosophy</span></li>
         </ul>
@@ -1276,83 +1343,268 @@ body {
     <p class="section-subtitle">This is the flexible half. We only book 2–3 nights ahead and let the vibes guide us. Gili Islands, Nusa Lembongan, and raw ocean adventures — crystal water, reef sharks, manta rays, and sunsets that make you hold hands and say nothing.</p>
   </div>
 
+  <!-- Island Comparison -->
+  <div class="reveal" style="max-width: 900px; margin: 0 auto 2.5rem; padding: 0 1.5rem;">
+    <div style="background: var(--ocean-deep); border-radius: 16px; padding: 1.5rem; color: white; overflow-x: auto;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem;">🐚 Quick Island Comparison</h3>
+      <table class="island-compare-table" style="width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 580px;">
+        <thead>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.2); text-align: left;">
+            <th style="padding: 0.6rem 0.5rem; font-weight: 700;">Island</th>
+            <th style="padding: 0.6rem 0.5rem;">Vibe</th>
+            <th style="padding: 0.6rem 0.5rem;">Best For</th>
+            <th style="padding: 0.6rem 0.5rem;">Nightlife</th>
+            <th style="padding: 0.6rem 0.5rem;">Stay</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <td style="padding: 0.6rem 0.5rem; font-weight: 700;">🌊 Gili T</td>
+            <td style="padding: 0.6rem 0.5rem;">Social, energetic</td>
+            <td style="padding: 0.6rem 0.5rem;">Diving + nightlife</td>
+            <td style="padding: 0.6rem 0.5rem;">⭐⭐⭐⭐⭐</td>
+            <td style="padding: 0.6rem 0.5rem;">2–4 nights</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <td style="padding: 0.6rem 0.5rem; font-weight: 700;">🌴 Gili Air</td>
+            <td style="padding: 0.6rem 0.5rem;">Balanced, chill</td>
+            <td style="padding: 0.6rem 0.5rem;">Couples + relaxed</td>
+            <td style="padding: 0.6rem 0.5rem;">⭐⭐</td>
+            <td style="padding: 0.6rem 0.5rem;">3–5 nights</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <td style="padding: 0.6rem 0.5rem; font-weight: 700;">🌿 Asahan</td>
+            <td style="padding: 0.6rem 0.5rem;">Remote, unplugged</td>
+            <td style="padding: 0.6rem 0.5rem;">Digital detox + eco</td>
+            <td style="padding: 0.6rem 0.5rem;">❌</td>
+            <td style="padding: 0.6rem 0.5rem;">3–6 nights</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.6rem 0.5rem; font-weight: 700;">🐢 Lembongan</td>
+            <td style="padding: 0.6rem 0.5rem;">Adventure + comfort</td>
+            <td style="padding: 0.6rem 0.5rem;">Manta rays + clubs</td>
+            <td style="padding: 0.6rem 0.5rem;">⭐⭐</td>
+            <td style="padding: 0.6rem 0.5rem;">3–4 nights</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="island-compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+      <div style="background: white; border-radius: 12px; padding: 1rem 1.25rem; font-size: 0.82rem; line-height: 1.7; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.3rem;">🌊 Gili T</div>
+        <div>Fun + diving + energy. Most developed, best nightlife, highest crowds.</div>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1rem 1.25rem; font-size: 0.82rem; line-height: 1.7; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.3rem;">🌴 Gili Air</div>
+        <div>Peace but not isolation. Great shore snorkeling, sunset bars, couples vibe.</div>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1rem 1.25rem; font-size: 0.82rem; line-height: 1.7; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.3rem;">🌿 Gili Asahan</div>
+        <div>True digital detox. Remote, pristine reefs, zero nightlife. Our kind of place.</div>
+      </div>
+      <div style="background: white; border-radius: 12px; padding: 1rem 1.25rem; font-size: 0.82rem; line-height: 1.7; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+        <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.3rem;">🐢 Nusa Lembongan</div>
+        <div>Marine adventure + comfort. Manta rays, beach clubs, easy Bali access.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="cards-grid">
 
     <!-- Gili T -->
-    <div class="card reveal">
+    <div class="card card-wide reveal">
       <div class="card-color-bar bar-ocean"></div>
       <div class="card-body">
-        <span class="card-emoji">🍄</span>
+        <span class="card-emoji">🤿</span>
         <h3 class="card-title">Gili Trawangan — Dive Days</h3>
-        <div class="card-location">📍 Gili Trawangan</div>
-        <p class="card-desc">The main dive hub. Reef sharks at Shark Point, a wreck dive, and warm water visibility that feels like flying. We push our limits a little here.</p>
-        <div class="card-links">
-          <a class="card-link" href="https://www.mantadive.com" target="_blank">🔗 Manta Dive</a>
-          <a class="card-link" href="https://www.blue-marlin-dive.com" target="_blank">🔗 Blue Marlin Dive</a>
+        <div class="card-location">📍 Gili Trawangan · The main dive hub</div>
+        <p class="card-desc">Reef sharks at Shark Point, Turtle Heaven, wreck dives, and warm water visibility that feels like flying. Multiple dive centers run 2–3 dives per day. Best visibility April–November. Bring cash for park fees.</p>
+        <div class="card-highlight">⚡ Marine Park fee ~100K + Eco Trust ~50K charged on arrival</div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🐢 Certified Fun Dives</div>
+          <div><strong>1 dive:</strong> ~600K–640K (~$38–41)</div>
+          <div><strong>3-dive pack:</strong> ~1.59M–1.72M (~$100–110)</div>
+          <div><strong>10-dive pack:</strong> ~4.72M–5M (~$300–320)</div>
+          <div><strong>Nitrox dive:</strong> ~790K/dive</div>
+
+          <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06);">
+            <strong>🫧 Try Scuba (Not Certified)</strong><br>
+            <span><strong>Discover Scuba (1 dive):</strong> ~995K–1.35M (~$60–80) — gear, instruction, supervised dive</span><br>
+            <span><strong>Try Scuba (2 dives):</strong> ~1.75M (~$110)</span>
+          </div>
+
+          <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06);">
+            <strong>📚 Certification Courses</strong><br>
+            <span><strong>Open Water:</strong> 3 days · ~5.97M–6.9M (~$360–420)</span><br>
+            <span><strong>Advanced Open Water:</strong> 2–3 days · ~5.9M</span><br>
+            <span><strong>Scuba Diver:</strong> 2 days · ~4.25M–4.9M</span><br>
+            <span><strong>Nitrox Specialty:</strong> 1 day · ~2.5M</span>
+          </div>
         </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🐬 Top Dive Centers</div>
+          <div>Gili Divers · Dive Central Gili · Trawangan Dive Centre (PADI 5-star)</div>
+          <div>Gili Scuba Diving · DPM Diving · Trawangan Stingray Divers</div>
+          <div>Blue Marine Dive · GoDiving Gili T · Scuba Froggy</div>
+        </div>
+
         <ul class="checklist" data-section="ocean">
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Choose dive center & book ahead</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Reef shark dive at Shark Point</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Wreck dive</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check Nitrox certification</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Turtle Heaven dive</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bring cash for park fees (~150K)</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">No flying 24 hrs after dive</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Gili Air -->
-    <div class="card reveal">
+    <div class="card card-wide reveal">
       <div class="card-color-bar bar-coral"></div>
       <div class="card-body">
         <span class="card-emoji">🌿</span>
         <h3 class="card-title">Gili Air — Our Slow Day</h3>
-        <div class="card-location">📍 Gili Air</div>
-        <p class="card-desc">The quieter island. This is where we put the phones down, watch the sunrise from the beach, and just… be. A digital detox day and a couples sunset ritual.</p>
-        <div class="card-highlight">⚡ More balanced — perfect for a reset day</div>
+        <div class="card-location">📍 Gili Air · The balanced island — laid-back but lively</div>
+        <p class="card-desc">No cars. No motorbikes. Just bikes and horses. If Gili T is the social one and Gili Meno is ultra-quiet, Gili Air is the perfect balance — slow, romantic, and unplugged. No entrance fee, it's a public island.</p>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🌅 Our Day Plan</div>
+
+          <div><strong>☀️ Sunrise (6–6:30am):</strong> East coast facing Lombok & Mount Rinjani · Coffee at beachfront café after</div>
+
+          <div style="margin-top: 0.3rem;"><strong>🐢 Mid-Morning — Snorkel with Turtles</strong></div>
+          <div style="padding-left: 0.5rem;">Gear rental: 50K–75K (~$3–5) · Private boat (2–3 hrs): 150K–250K/person · 3–4 spots incl. turtle point</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); padding-left: 0.5rem;">Turtles often visible 50–100m from shore on northeast side</div>
+
+          <div style="margin-top: 0.3rem;"><strong>🚲 Late Morning — Bike the Island</strong></div>
+          <div style="padding-left: 0.5rem;">Rental: 50K–75K/day · Full loop: ~5 km · 45–60 min slowly</div>
+
+          <div style="margin-top: 0.3rem;"><strong>💆 Afternoon — Chill + Massage</strong></div>
+          <div style="padding-left: 0.5rem;">Balinese massage (60 min): 150K–250K · Yoga drop-in: 120K–150K</div>
+
+          <div style="margin-top: 0.3rem;"><strong>🌅 Sunset — West Side Magic</strong></div>
+          <div style="padding-left: 0.5rem;">Views over Bali + Mount Agung · Bean bags, live acoustic music, fresh seafood</div>
+          <div style="padding-left: 0.5rem;">Dinner for two: 200K–300K casual / 400K–600K nicer</div>
+
+          <div style="margin-top: 0.4rem; padding-top: 0.4rem; border-top: 1px solid rgba(0,0,0,0.06);">
+            <strong>🛶 Optional Add-Ons:</strong> SUP 100K–150K/hr · Kayak 75K–100K/hr
+          </div>
+        </div>
+
         <ul class="checklist" data-section="ocean">
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunrise beach meditation together</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Digital detox day — phones off</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Couples sunset ritual</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunrise on east coast</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Snorkel with turtles</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bike the full island loop</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Beach massage together</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunset dinner on the west side</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Gili Asahan -->
-    <div class="card reveal">
+    <div class="card card-wide reveal">
       <div class="card-color-bar bar-jungle"></div>
       <div class="card-body">
         <span class="card-emoji">🏝</span>
         <h3 class="card-title">Gili Asahan — Our Island Base</h3>
-        <div class="card-location">📍 Gili Asahan · 3–6 nights</div>
-        <p class="card-desc">This is our home base for the island stretch. Raw ocean, macro diving, turtle encounters, and stronger currents. Off the beaten path — real ocean lovers only. We go as deep as the vibe takes us.</p>
-        <div class="card-highlight">⚡ Stronger currents — advanced diving</div>
+        <div class="card-location">📍 Gili Asahan · Tiny island off SW Lombok · 3–6 nights</div>
+        <p class="card-desc">If Gili Air is relaxed, Gili Asahan is unplugged. Walk the whole island in 45 minutes. Few boutique eco-resorts, no ATMs, no party scene. Just reef, silence, sunsets, and slow mornings. Raw tropical peace.</p>
+        <div class="card-highlight">⚡ Bring cash — no ATMs · WiFi & power depend on resort · Quiet after 9PM</div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🚤 How to Get There</div>
+          <div>Fast boat to Bangsal (Lombok) → transfer boat to Gili Asahan</div>
+          <div><strong>Transfer boat:</strong> ~300K–500K · <strong>Total travel:</strong> 3–5 hours from Bali</div>
+          <div style="font-size: 0.8rem; color: var(--text-light);">Pre-book transfers · Bring reef-safe sunscreen · Expect island time</div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🌅 Day 1 — Arrive + Exhale</div>
+          <div>Boat in → beachfront bungalow → coconut + light lunch → phones on airplane mode</div>
+          <div>First snorkel straight off the beach → float with no agenda</div>
+          <div>Walk to west side → barefoot golden hour → seafood dinner under lantern light</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); font-style: italic;">Goal: Shift from travel mode → island mode</div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🐢 Day 2 — Water Day</div>
+          <div>Sunrise calm water swim (6:30am) → coffee with ocean view</div>
+          <div>Guided snorkel or 2-dive scuba session — turtle reef + coral sites → back by noon</div>
+          <div>Long lunch → hammock nap → journal/read</div>
+          <div>Kayak or paddleboard → optional couple's massage (60 min)</div>
+          <div>Quiet dinner → stargazing (minimal light pollution)</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); font-style: italic;">Goal: Deep immersion in water + nature</div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🌊 Day 3 — Explore or Do Nothing</div>
+          <div><strong>Option A:</strong> Mini-island hop → boat to quiet reefs → snorkel multiple sites → back by afternoon</div>
+          <div><strong>Option B:</strong> Sleep in → beach walk the full island loop → midday swim → sunset float</div>
+          <div>Final night: sunset photos → toast dinner → reflect on the trip together</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); font-style: italic;">Goal: Close intentionally — not rushed</div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.5rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🌅 Day 4 — Departure Morning</div>
+          <div>Early swim → breakfast → boat transfer out</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); font-style: italic;">Leave light. Leave slow.</div>
+        </div>
+
         <ul class="checklist" data-section="ocean">
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">2 dives max per day</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hydrate heavily</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Rest day after 2 dive days</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pre-book transfer boat</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Bring enough cash (no ATMs)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book eco-resort in advance</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Pack reef-safe sunscreen</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Phones on airplane mode</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Stargazing night</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunset toast dinner</span></li>
         </ul>
       </div>
     </div>
 
     <!-- Nusa -->
-    <div class="card reveal">
+    <div class="card card-wide reveal">
       <div class="card-color-bar bar-gold"></div>
       <div class="card-body">
         <span class="card-emoji">🐢</span>
-        <h3 class="card-title">Nusa Lembongan</h3>
-        <div class="card-location">📍 Stay: Jungbatu Beach or Mushroom Bay Beach</div>
-        <p class="card-desc">Chill island vibes with legendary diving. Crystal Bay for manta rays, mangrove tours, and turquoise water that doesn't look real. We stay near the beach and check out the local spots.</p>
+        <h3 class="card-title">Nusa Lembongan — Island Escape</h3>
+        <div class="card-location">📍 Nusa Lembongan · Smaller & more relaxed than Bali · Turquoise water, mangroves, manta rays</div>
+        <p class="card-desc">One of Bali's most beloved island getaways — turquoise waters that feel unreal, coral gardens, manta ray snorkeling, beachfront chill spots, and an easygoing island pace. More developed than Nusa Ceningan/Penida but way more chill than mainland Bali.</p>
+
         <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
-          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">📍 Spots to Check</div>
-          <div><strong>Savaya Bali</strong> — Beach club</div>
-          <div><strong>Lago by Pontoon</strong> — <span style="color: var(--coral);">Temporarily closed</span> · <a href="https://www.instagram.com/lago.bali" target="_blank" style="color: var(--ocean);">@lago.bali</a></div>
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🏖️ Where to Stay</div>
+          <div><strong>Jungbatu Beach</strong> — Long white sand, cafes, bars, sunset views. Best for nightlife, casual dining, dive shops.</div>
+          <div><strong>Mushroom Bay</strong> — Calmer, more boutique. Curved bay with reef protection, gentler waves. Best for couples, chill brunches, relaxed swims.</div>
         </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">📍 Spots to Hit</div>
+          <div><strong>🍹 Savaya Bali</strong> — Luxury oceanfront lounge · Pool + daybeds · Sunset DJ sets · Med-tropical food</div>
+          <div style="padding-left: 0.5rem; font-size: 0.8rem;">Daybed min spend: ~500K–1.5M+ · Cocktails: ~120K–220K · Small plates: ~90K–170K</div>
+          <div style="margin-top: 0.3rem;"><strong>🌿 Mangrove Tour</strong> — Kayak through canals, birdwatching, hidden lagoons. Great mid-day break from sun.</div>
+          <div style="margin-top: 0.3rem;"><strong>❌ Lago by Pontoon</strong> — <span style="color: var(--coral);">Temporarily closed</span> · <a href="https://www.instagram.com/lago.bali" target="_blank" style="color: var(--ocean);">@lago.bali for updates</a></div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">🗺️ 3–4 Day Itinerary</div>
+          <div><strong>Day 1 — Arrival:</strong> Check in at Jungbatu or Mushroom Bay → sunset beach walk → dinner beachfront</div>
+          <div><strong>Day 2 — Water Day:</strong> Morning snorkel/manta tour → lunch at Savaya → mangrove tour → sunset swim + cocktails</div>
+          <div><strong>Day 3 — Dive Adventure:</strong> Half or full day diving → sunset at Mushroom Bay → relaxed dinner</div>
+          <div><strong>Day 4 — Depart:</strong> Beach yoga → brunch → fast boat to Bali or next island</div>
+        </div>
+
         <div class="card-links">
           <a class="card-link" href="https://www.crystalbaydivers.com" target="_blank">🔗 Crystal Bay Divers</a>
         </div>
         <ul class="checklist" data-section="ocean">
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Confirm tide conditions</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Avoid rough sea days</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book early departure ferry</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book stay — Jungbatu or Mushroom Bay</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Snorkel/manta ray tour</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Lunch at Savaya Bali</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Mangrove kayak tour</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Book fast boat transfer</span></li>
         </ul>
       </div>
     </div>
@@ -1377,11 +1629,29 @@ body {
       <div class="card-body">
         <span class="card-emoji">🌅</span>
         <h3 class="card-title">Sunset at the Cliff Temple</h3>
-        <div class="card-location">📍 Uluwatu Temple</div>
-        <p class="card-desc">Perched on a cliff 70 meters above the ocean. We watch the Kecak fire dance as the sun drops into the sea, then have our final reflection dinner together.</p>
+        <div class="card-location">📍 Uluwatu Temple (Pura Luhur Uluwatu) · 70m above the Indian Ocean</div>
+        <p class="card-desc">An 11th-century sea temple on a sheer limestone cliff — one of Bali's six spiritual pillars. At sunset, the cliffs glow gold, waves crash below, and the sky turns surreal shades of orange and violet. This is less of a temple visit and more of a cinematic moment. Arrive 4:30–5:00 PM.</p>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💰 Costs</div>
+          <div><strong>Temple entrance:</strong> 50K</div>
+          <div><strong>Kecak Fire Dance:</strong> 150K/person · ~6PM · 60 min · Cliffside amphitheater</div>
+          <div><strong>Parking:</strong> 5K–10K</div>
+          <div><strong>Sarong:</strong> Usually included</div>
+          <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.3rem;">Bring small cash</div>
+        </div>
+
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--coral); margin-bottom: 0.5rem;">🐒 Monkey Warning</div>
+          <div>Uluwatu's monkeys are smart. They <strong>will</strong> grab sunglasses, snatch phones, pull hair, and open bags.</div>
+          <div style="margin-top: 0.3rem;">✔ No loose accessories ✔ Phone secure ✔ Don't feed them ✔ Stay calm</div>
+          <div style="font-size: 0.8rem; color: var(--text-light);">Staff can retrieve stolen items (sometimes with fruit bribes)</div>
+        </div>
+
         <ul class="checklist" data-section="uluwatu">
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Sunset at cliff temple</span></li>
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Watch Kecak fire dance</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Arrive 4:30–5PM for sunset</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Watch Kecak Fire Dance (~150K)</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Secure phones & sunglasses from monkeys</span></li>
           <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Final reflection dinner together</span></li>
         </ul>
       </div>
@@ -1391,11 +1661,20 @@ body {
       <div class="card-color-bar bar-jungle"></div>
       <div class="card-body">
         <span class="card-emoji">💪</span>
-        <h3 class="card-title">Bamboo Fitness</h3>
+        <h3 class="card-title">Uluwatu Gym Options</h3>
         <div class="card-location">📍 Uluwatu</div>
-        <p class="card-desc">If we're in Uluwatu, we get one more gym session in. Bamboo Fitness is the spot down here — keep the routine going even on vacation.</p>
+        <p class="card-desc">Keep the routine going. Uluwatu has some solid gyms with day passes, classes, and coaching.</p>
+        <div style="background: var(--sand); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.8;">
+          <div style="font-weight: 700; color: var(--ocean-deep); margin-bottom: 0.5rem;">💪 Top Picks</div>
+          <div><strong>⭐ Bambu Fitness</strong> — ★4.8 · Drop-in 275K / Open gym 225K · Strength, HIIT, classes · <a href="https://maps.google.com/?cid=10212277538057103885" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>Uluwatu Collective</strong> — ★4.9 · ~250K · Weights, coaching, group classes · <a href="https://maps.google.com/?cid=991309427702079896" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div><strong>360 MOVE</strong> — ★4.9 · ~200K · Classes + gym, functional training · <a href="https://maps.google.com/?cid=12474059830167929390" target="_blank" style="color: var(--ocean);">Map</a></div>
+          <div style="margin-top: 0.4rem; padding-top: 0.4rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.8rem; color: var(--text-light);">
+            Also: Raw Gym (strong community) · Fitness Plus (~200K, 24/7) · Jaya Gym (budget) · ULU FIT (boutique + recovery)
+          </div>
+        </div>
         <ul class="checklist" data-section="uluwatu">
-          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hit Bamboo Fitness</span></li>
+          <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Hit a gym in Uluwatu</span></li>
         </ul>
       </div>
     </div>
