@@ -756,6 +756,48 @@ body {
 
 /* ====== SECTION DIVIDERS ====== */
 .divider {
+
+}
+
+/* ====== SECTION BANNERS ====== */
+.section-banner {
+  width: 100%;
+  max-height: 280px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+.section-banner img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 700px) {
+  .section-banner { max-height: 180px; border-radius: 14px; margin-bottom: 1rem; }
+  .section-banner img { height: 180px; }
+}
+@media (max-width: 380px) {
+  .section-banner { max-height: 140px; border-radius: 12px; }
+  .section-banner img { height: 140px; }
+}
+
+/* Card-level banners (inside cards) */
+.card-banner {
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+}
+.card-banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 700px) {
+  .card-banner { max-height: 160px; }
+  .card-banner img { height: 160px; }
+}
   text-align: center;
   padding: 2rem 0;
   font-size: 1.5rem;
@@ -1141,6 +1183,9 @@ body {
 <!-- ====== SECTION 2: UBUD ====== -->
 <section class="section" id="ubud">
   <div class="section-header reveal">
+    <div class="section-banner">
+      <img src="Ubud.webp" alt="Ubud rice terraces and mountains at sunrise">
+    </div>
     <span class="section-icon">🌿</span>
     <div class="section-label">Mar 14–17 · Sat–Mon · 2–3 Nights</div>
     <h2 class="section-title">Ubud — Spiritual Immersion</h2>
@@ -1415,6 +1460,9 @@ body {
     <!-- Gili T -->
     <div class="card card-wide reveal">
       <div class="card-color-bar bar-ocean"></div>
+      <div class="card-banner">
+        <img src="Gili_T.jpg" alt="Gili Trawangan aerial view">
+      </div>
       <div class="card-body">
         <span class="card-emoji">🤿</span>
         <h3 class="card-title">Gili Trawangan — Dive Days</h3>
@@ -1464,6 +1512,9 @@ body {
     <!-- Gili Air -->
     <div class="card card-wide reveal">
       <div class="card-color-bar bar-coral"></div>
+      <div class="card-banner">
+        <img src="Gili_Air.jpg" alt="Gili Air sunset bungalows">
+      </div>
       <div class="card-body">
         <span class="card-emoji">🌿</span>
         <h3 class="card-title">Gili Air — Our Slow Day</h3>
@@ -1507,6 +1558,9 @@ body {
     <!-- Gili Asahan -->
     <div class="card card-wide reveal">
       <div class="card-color-bar bar-jungle"></div>
+      <div class="card-banner">
+        <img src="Gili_Asahan.jpg" alt="Gili Asahan aerial view">
+      </div>
       <div class="card-body">
         <span class="card-emoji">🏝</span>
         <h3 class="card-title">Gili Asahan — Our Island Base</h3>
@@ -1568,6 +1622,9 @@ body {
     <!-- Nusa -->
     <div class="card card-wide reveal">
       <div class="card-color-bar bar-gold"></div>
+      <div class="card-banner">
+        <img src="Nusa_Lembongan.webp" alt="Nusa Lembongan yellow bridge and turquoise water">
+      </div>
       <div class="card-body">
         <span class="card-emoji">🐢</span>
         <h3 class="card-title">Nusa Lembongan — Island Escape</h3>
@@ -1617,6 +1674,9 @@ body {
 <!-- ====== SECTION 4: ULUWATU ====== -->
 <section class="section" id="uluwatu">
   <div class="section-header reveal">
+    <div class="section-banner">
+      <img src="Uluwatu.webp" alt="Uluwatu temple on cliff overlooking ocean">
+    </div>
     <span class="section-icon">🛕</span>
     <div class="section-label">Mar 17–20 or If We Leave the Islands · 1–3 Nights · Close to DPS</div>
     <h2 class="section-title">Uluwatu — The Grand Finale</h2>
@@ -1686,6 +1746,9 @@ body {
 <!-- ====== SECTION 5: CULTURE ====== -->
 <section class="section" id="culture">
   <div class="section-header reveal">
+    <div class="section-banner">
+      <img src="Deeper_Cultural_Experiences.jpg" alt="Traditional Balinese dance performance">
+    </div>
     <span class="section-icon">🎭</span>
     <div class="section-label">Woven Throughout</div>
     <h2 class="section-title">Deeper Cultural Experiences</h2>
